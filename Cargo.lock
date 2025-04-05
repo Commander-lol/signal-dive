@@ -2792,6 +2792,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "micro_games_macros"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7bd1c57f9d713d8bcf121ee1c09184ea2d1afcd51fad70ea13004f74374237a2"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "minimal-lexical"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4017,6 +4028,7 @@ dependencies = [
  "bevy_kira_audio",
  "leafwing-input-manager",
  "log",
+ "micro_games_macros",
  "num-traits",
 ]
 

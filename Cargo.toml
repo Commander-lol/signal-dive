@@ -15,6 +15,7 @@ bevy_kira_audio.workspace = true
 leafwing-input-manager.workspace = true
 log.workspace = true
 num-traits.workspace = true
+micro_games_macros.workspace = true
 
 [workspace.dependencies]
 avian2d = "0.2.1"
@@ -23,6 +24,7 @@ bevy_kira_audio = "0.22.0"
 leafwing-input-manager = "0.16.0"
 log = "0.4.27"
 num-traits = "0.2.19"
+micro_games_macros = "0.6"
 
 [workspace.dependencies.bevy]
 version = "0.15"
