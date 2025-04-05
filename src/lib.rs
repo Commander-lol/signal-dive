@@ -6,6 +6,7 @@ use bevy::window::{PresentMode, WindowMode, WindowResolution};
 
 mod debug;
 mod system;
+mod entities;
 
 #[bevy_main]
 fn main() {
@@ -15,11 +16,14 @@ fn main() {
 pub fn launch(window: WindowPlugin) {
 	let mut app = App::new();
 	app.add_plugins((
-		DefaultPlugins.set(window),
+		DefaultPlugins
+			.set(window)
+			.set(ImagePlugin::default_nearest()),
 		debug::DebugPlugin,
 		system::SystemPluginGroup,
+		entities::EntityPluginGroup,
 		avian2d::PhysicsPlugins::default(),
-		avian2d::debug_render::PhysicsDebugPlugin::default(),
+		// avian2d::debug_render::PhysicsDebugPlugin::default(),
 	))
 	.insert_resource(Gravity(Vec2::ZERO));
 
