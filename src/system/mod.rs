@@ -7,6 +7,7 @@ mod colours;
 mod state;
 
 pub use assets::AssetLibrary;
+pub use cameras::{CameraFollow, MainCamera, TrackCameraPosition};
 pub use colours::SystemColours;
 pub use state::{GameState, const_transition_state, is_window_focused};
 

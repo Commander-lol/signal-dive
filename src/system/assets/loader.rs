@@ -27,6 +27,7 @@ impl AssetLibraryLoader<'_> {
 pub fn register_assets(mut assets: AssetLibraryLoader) {
 	assets.load_image_list_static(&[
 		("sprites/submarine.png", "submarine"),
+		("sprites/noise.png", "background_noise"),
 		// Emitter bubbles
 		("sprites/environment/bubble_small_1.png", "bubble_small_1"),
 		("sprites/environment/bubble_small_2.png", "bubble_small_2"),

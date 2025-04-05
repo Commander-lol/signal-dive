@@ -1,5 +1,5 @@
 use crate::entities::{DirectionTracked, MovePower, create_default_input_map};
-use crate::system::{AssetLibrary, GameState};
+use crate::system::{AssetLibrary, CameraFollow, GameState, const_transition_state};
 use avian2d::prelude::{
 	Collider, ExternalForce, ExternalTorque, LinearDamping, LockedAxes, MaxLinearSpeed, RigidBody,
 };
@@ -16,6 +16,7 @@ pub fn spawn_test_player(mut commands: Commands, library: Res<AssetLibrary>) {
 				Transform::from_rotation(Quat::from_rotation_z(90.0.to_radians())),
 				Visibility::default(),
 				DirectionTracked,
+				CameraFollow,
 			),
 			(
 				RigidBody::Dynamic,
@@ -47,9 +48,23 @@ pub fn spawn_test_player(mut commands: Commands, library: Res<AssetLibrary>) {
 		});
 }
 
+pub fn spawn_test_environment(
+	mut commands: Commands,
+	library: Res<AssetLibrary>,
+	window: Single<&Window>,
+) {
+}
+
 pub struct DebugPlugin;
 impl Plugin for DebugPlugin {
 	fn build(&self, app: &mut App) {
-		app.add_systems(OnEnter(GameState::MainMenu), (spawn_test_player,));
+		app.add_systems(
+			OnEnter(GameState::MainMenu),
+			const_transition_state::<{ GameState::InGame }>,
+		)
+		.add_systems(
+			OnEnter(GameState::InGame),
+			(spawn_test_player, spawn_test_environment),
+		);
 	}
 }

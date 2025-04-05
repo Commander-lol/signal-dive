@@ -6,6 +6,7 @@ use bevy::window::{PresentMode, WindowMode, WindowResolution};
 
 mod debug;
 mod entities;
+mod graphics;
 mod system;
 
 #[bevy_main]
@@ -22,6 +23,7 @@ pub fn launch(window: WindowPlugin) {
 		debug::DebugPlugin,
 		system::SystemPluginGroup,
 		entities::EntityPluginGroup,
+		graphics::GraphicsPluginGroup,
 	))
 	.add_plugins((
 		avian2d::PhysicsPlugins::default(),
