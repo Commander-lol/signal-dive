@@ -2,13 +2,13 @@ use bevy::app::PluginGroupBuilder;
 use bevy::prelude::PluginGroup;
 
 mod assets;
-mod state;
 mod cameras;
 mod colours;
+mod state;
 
 pub use assets::AssetLibrary;
-pub use state::{GameState, const_transition_state, is_window_focused};
 pub use colours::SystemColours;
+pub use state::{GameState, const_transition_state, is_window_focused};
 
 pub struct SystemPluginGroup;
 impl PluginGroup for SystemPluginGroup {

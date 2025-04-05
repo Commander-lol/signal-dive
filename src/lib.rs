@@ -5,8 +5,8 @@ use bevy::prelude::*;
 use bevy::window::{PresentMode, WindowMode, WindowResolution};
 
 mod debug;
-mod system;
 mod entities;
+mod system;
 
 #[bevy_main]
 fn main() {
@@ -22,8 +22,11 @@ pub fn launch(window: WindowPlugin) {
 		debug::DebugPlugin,
 		system::SystemPluginGroup,
 		entities::EntityPluginGroup,
+	))
+	.add_plugins((
 		avian2d::PhysicsPlugins::default(),
 		// avian2d::debug_render::PhysicsDebugPlugin::default(),
+		bevy_enoki::EnokiPlugin,
 	))
 	.insert_resource(Gravity(Vec2::ZERO));
 

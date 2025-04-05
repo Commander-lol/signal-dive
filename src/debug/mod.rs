@@ -1,10 +1,13 @@
+use crate::entities::{DirectionTracked, MovePower, create_default_input_map};
 use crate::system::{AssetLibrary, GameState};
-use avian2d::prelude::{Collider, ExternalForce, ExternalTorque, LinearDamping, LockedAxes, MaxLinearSpeed, RigidBody};
+use avian2d::prelude::{
+	Collider, ExternalForce, ExternalTorque, LinearDamping, LockedAxes, MaxLinearSpeed, RigidBody,
+};
 use bevy::prelude::*;
+use bevy_enoki::{ParticleEffectHandle, ParticleSpawner};
+use leafwing_input_manager::InputManagerBundle;
 use num_traits::float::FloatCore;
 use std::fmt::Debug;
-use leafwing_input_manager::InputManagerBundle;
-use crate::entities::{create_default_input_map, DirectionTracked, MovePower};
 
 pub fn spawn_test_player(mut commands: Commands, library: Res<AssetLibrary>) {
 	commands
@@ -33,6 +36,13 @@ pub fn spawn_test_player(mut commands: Commands, library: Res<AssetLibrary>) {
 					image: library.image("submarine"),
 					..default()
 				},
+			));
+
+			commands.spawn((
+				DirectionTracked,
+				Transform::from_translation(Vec3::new(0.0, 48.0, 0.0)),
+				ParticleEffectHandle(library.emitter("bubble_emitter")),
+				ParticleSpawner(library.sprite_particle("bubble_emitter")),
 			));
 		});
 }
