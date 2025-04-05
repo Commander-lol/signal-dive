@@ -1,6 +1,50 @@
 [package]
-name = "SignalDive"
+name = "signal_dive"
 version = "0.1.0"
 edition = "2024"
 
+[features]
+default = []
+desktop = ["bevy/x11", "bevy/wayland"]
+
 [dependencies]
+bevy.workspace = true
+avian2d.workspace = true
+bevy_enoki.workspace = true
+bevy_kira_audio.workspace = true
+leafwing-input-manager.workspace = true
+log.workspace = true
+num-traits.workspace = true
+
+[workspace.dependencies]
+avian2d = "0.2.1"
+bevy_enoki = "0.3.3"
+bevy_kira_audio = "0.22.0"
+leafwing-input-manager = "0.16.0"
+log = "0.4.27"
+num-traits = "0.2.19"
+
+[workspace.dependencies.bevy]
+version = "0.15"
+default-features = false
+features = [
+    "multi_threaded",
+    "bevy_gilrs",
+    "bevy_gizmos",
+    "default_font",
+    "bevy_state",
+    "bevy_winit",
+    "bevy_ui",
+    "bevy_picking",
+    "bevy_ui_picking_backend",
+    "bevy_sprite_picking_backend",
+    "bevy_scene",
+    "bevy_sprite",
+    "bevy_text",
+    "animation",
+    "bevy_animation",
+    "bevy_core_pipeline",
+    "bevy_asset",
+    "serialize",
+    "custom_cursor"
+]

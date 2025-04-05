@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    signal_dive::launch(signal_dive::build_window());
 }
