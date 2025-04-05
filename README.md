@@ -1,5 +1,10 @@
 # Signal Dive
 
+![Static Badge](https://img.shields.io/badge/Ludum_Dare-57-597dce?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Language-Rust-d27d2c?style=for-the-badge&logo=rust&logoColor=%23FFFFFF)
+![Static Badge](https://img.shields.io/badge/Engine-Bevy-d04648?style=for-the-badge&logo=bevy&logoColor=%23FFFFFF)
+
+
 Delve into the watery depths for Ludum Dare 57 Compo
 
 (Warning: contains a very straight forward interpretation of the theme)
@@ -7,9 +12,6 @@ Delve into the watery depths for Ludum Dare 57 Compo
 ## Project
 
 ### Getting Started
-
-- Language: Rust
-- Frameworks: Bevy
 
 This project is configured to build under nightly Rust, taking advantage of certain unstable features. To build
 this project then follow these steps, skipping to (3) if you already have a recent version of nightly rust:
