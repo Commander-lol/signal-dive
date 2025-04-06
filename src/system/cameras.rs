@@ -21,7 +21,7 @@ pub fn spawn_camera(mut commands: Commands) {
 		Msaa::Off,
 		OrthographicProjection {
 			far: 4000.0,
-			scale: 0.80,
+			scale: 0.50,
 			scaling_mode: ScalingMode::AutoMin {
 				min_width: 1280.,
 				min_height: 720.,

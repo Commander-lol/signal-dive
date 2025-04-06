@@ -42,6 +42,7 @@ features = [
     "bevy_sprite_picking_backend",
     "bevy_scene",
     "bevy_sprite",
+    "bevy_pbr",
     "bevy_text",
     "animation",
     "bevy_animation",

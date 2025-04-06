@@ -26,16 +26,22 @@ impl AssetLibraryLoader<'_> {
 
 pub fn register_assets(mut assets: AssetLibraryLoader) {
 	assets.load_image_list_static(&[
-		("sprites/submarine.png", "submarine"),
+		("sprites/minisub.png", "submarine"),
 		("sprites/noise.png", "background_noise"),
 		// Emitter bubbles
 		("sprites/environment/bubble_small_1.png", "bubble_small_1"),
 		("sprites/environment/bubble_small_2.png", "bubble_small_2"),
 		("sprites/environment/bubble_medium_1.png", "bubble_medium_1"),
 		("sprites/environment/bubble_large_1.png", "bubble_large_1"),
-		// Rock environment
+		// Environment
 		("sprites/environment/rock_rounded_1.png", "rock_rounded_1"),
 		("sprites/environment/rock_spike_1.png", "rock_spike_1"),
+		("sprites/environment/kelp_1.png", "kelp_1"),
+		("sprites/environment/kelp_2.png", "kelp_2"),
+		("sprites/environment/kelp_3.png", "kelp_3"),
+		("sprites/environment/kelp_4.png", "kelp_4"),
+		("sprites/environment/kelp_5.png", "kelp_5"),
+		("sprites/environment/kelp_6.png", "kelp_6"),
 	]);
 
 	assets.load_emitter_list_static(&[("particles/bubble_emitter.ron", "bubble_emitter")]);

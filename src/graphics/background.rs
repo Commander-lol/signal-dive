@@ -1,3 +1,4 @@
+use crate::graphics::LAYER_BACKGROUND;
 use crate::system::{AssetLibrary, GameState, MainCamera};
 use bevy::prelude::*;
 use bevy::window::WindowResized;
@@ -8,6 +9,7 @@ struct Background;
 fn spawn_background(mut commands: Commands, library: Res<AssetLibrary>, window: Single<&Window>) {
 	commands.spawn((
 		Background,
+		Transform::from_translation(Vec3::new(0.0, 0.0, LAYER_BACKGROUND)),
 		Sprite {
 			image: library.image("background_noise"),
 			image_mode: SpriteImageMode::Tiled {
